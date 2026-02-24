@@ -1,62 +1,61 @@
-```
 A Computer Rental System built with a diskless server architecture and integrated social media booking system.
 
 This project is designed for computer labs, internet cafés, training centers, and rental hubs that require centralized management, fast deployment, and efficient resource control.
-```
 
-# 🚀 Key Features
+
+## 🚀 Key Features
 
 🖥 Diskless Server Setup
 
-## Centralized OS and software management
+ Centralized OS and software management
 
-## Clients boot from a master server (PXE/network boot)
+ Clients boot from a master server (PXE/network boot)
 
-## Reduced hardware costs and easier maintenance
+ Reduced hardware costs and easier maintenance
 
-## Faster system recovery and updates
+ Faster system recovery and updates
 
-# 📊 Rental Management System
+## 📊 Rental Management System
 
-## User registration and authentication
+ User registration and authentication
 
-## Session-based time tracking
+ Session-based time tracking
 
-## Automated billing and payment tracking
+ Automated billing and payment tracking
 
-## Admin dashboard for monitoring active clients
+ Admin dashboard for monitoring active clients
 
-## Usage reports and analytics
+ Usage reports and analytics
 
-# 📅 Social Media Booking Integration
+## 📅 Social Media Booking Integration
 
-## Booking via platforms like Facebook and Instagram
+- Booking via platforms like Facebook and Instagram
 
-## Messenger-based reservation confirmations
+- Messenger-based reservation confirmations
 
-## Automated booking notifications
+- Automated booking notifications
 
-## Real-time availability updates
+- Real-time availability updates
 
-# 🔐 Role-Based Access Control
+- 🔐 Role-Based Access Control
 
-## Admin & Staff management
+- Admin & Staff management
 
-## Customer access panel
+- Customer access panel
 
-## Activity logs and security monitoring
+- Activity logs and security monitoring
 
-# 💡 System Architecture
+## 💡 System Architecture
 
-## Central Diskless Server (Image + Application Server)
+### Central Diskless Server (Image + Application Server)
 
-## Network Boot Clients (PXE-enabled)
+### Network Boot Clients (PXE-enabled)
 
-## Web-Based Admin Panel
+### Web-Based Admin Panel
 
-## API Integration for Social Media Platforms
+### API Integration for Social Media Platforms
 
-## Database for user, booking, and billing management
+### Database for user, booking, and billing management
 
 # 🎯 Ideal For
 
@@ -70,6 +69,5 @@ This project is designed for computer labs, internet cafés, training centers, a
 
 - Co-working Spaces
 
-```
+
 This system combines centralized infrastructure management with modern online booking capabilities, reducing operational overhead while improving customer convenience and scalability.
-```
