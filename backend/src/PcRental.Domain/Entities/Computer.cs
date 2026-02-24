@@ -1,11 +1,20 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace PcRental.Domain.Entities;
 
 public class Computer
 {
     public Guid Id { get; private set; }
+
+    [Required, MaxLength(50)]
     public string Name { get; private set; } = default!;
+
+    [Required]
     public bool IsAvailable { get; private set; }
+
     public DateTime CreatedAt { get; private set; }
+
+    public List<Booking> Bookings { get; set; } = new();
     private Computer() { } // For ORM
 
     public Computer(string name)
