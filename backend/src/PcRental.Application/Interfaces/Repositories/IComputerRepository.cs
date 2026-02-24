@@ -3,7 +3,6 @@ namespace PcRental.Application.Interfaces.Repositories;
 using PcRental.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Threading.Tasks;
 
 public interface IComputerRepository
