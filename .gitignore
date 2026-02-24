@@ -1,0 +1,113 @@
+# ==========================
+# Visual Studio / .NET Core
+# ==========================
+.vs/                      # Visual Studio workspace settings
+*.user                    # User-specific files
+*.suo                     # Solution user options
+*.userosscache
+*.sln.docstates
+*.ncrunch*
+TestResults/              # Unit test results
+artifacts/                # Build artifacts
+*.binlog                  # MSBuild binary logs
+
+# ==========================
+# C# / .NET Build Results
+# ==========================
+**/bin/
+**/obj/
+**/artifacts/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.class
+*.mdb
+*.log
+
+# Build configurations
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+
+# MSBuild / VS CodeCoverage
+CodeCoverage/
+*.coverage
+*.coveragexml
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Environment
+.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# ==========================
+# Entity Framework / Migrations
+# ==========================
+Migrations/
+*.Snapshot.cs
+*.csdl
+*.ssdl
+*.msl
+*.ldf
+*.mdf
+
+# ==========================
+# Node / React Frontend
+# ==========================
+node_modules/
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================
+# Logs & temporary files
+# ==========================
+*.tmp
+*.temp
+*.log
+
+# ==========================
+# IDE / Editor files
+# ==========================
+.idea/
+*.sln.iml
+*.swp
+*.swo
+
+# ==========================
+# OS files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Documentation / UML
+# ==========================
+docs/uml/*.drawio
+docs/uml/*.puml
+*.pdf
+
+# ==========================
+# Git / Misc
+# ==========================
+*.orig
+*.rej
+*.bak
