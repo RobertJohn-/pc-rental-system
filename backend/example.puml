@@ -1,0 +1,19 @@
+@startuml
+
+class User {
+  -id: int
+  -name: string
+  -email: string
+  +login()
+  +logout()
+}
+
+class Order {
+  -orderId: int
+  -date: Date
+  +calculateTotal()
+}
+
+User "1" --> "many" Order : places
+
+@enduml

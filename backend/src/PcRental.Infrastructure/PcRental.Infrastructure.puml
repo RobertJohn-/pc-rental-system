@@ -1,0 +1,95 @@
+@startuml
+skinparam componentStyle rectangle
+
+'=============================
+' Domain Layer
+'=============================
+package "PcRental.Domain" {
+    class Computer {
+        - Id : Guid
+        - Name : string
+        - IsAvailable : bool
+        - CreatedAt : DateTime
+
+        + Computer(name : string)
+        + Rent() : void
+        + Return() : void
+        + Rename(newName : string) : void
+    }
+}
+
+'=============================
+' Application Layer
+'=============================
+package "PcRental.Application" {
+    interface IComputerRepository {
+        + GetByIdAsync(id : Guid) : Task<Computer?>
+        + GetAllAsync() : Task<IEnumerable<Computer>>
+        + AddAsync(computer : Computer) : Task
+        + UpdateAsync(computer : Computer) : Task
+        + DeleteAsync(id : Guid) : Task
+        + GetAvailableAsync() : Task<IEnumerable<Computer>>
+    }
+
+    package "Services" {
+        class ComputerService {
+            + RentComputer(id : Guid) : Task
+            + ReturnComputer(id : Guid) : Task
+            + RenameComputer(id : Guid, newName : string) : Task
+        }
+    }
+}
+
+'=============================
+' Infrastructure Layer
+'=============================
+package "PcRental.Infrastructure" {
+    class AppDbContext {
+        + DbSet<Computer>
+    }
+
+    class ComputerRepository
+
+    ' Implementation relation
+    IComputerRepository <|.. ComputerRepository
+    ComputerRepository --> AppDbContext
+    ComputerRepository --> Computer
+}
+
+'=============================
+' API Layer
+'=============================
+package "PcRental.API" {
+    class ComputerController {
+        + GetAll()
+        + GetById(id : Guid)
+        + Create(name : string)
+        + Rent(id : Guid)
+        + Return(id : Guid)
+    }
+
+    ' API depends on Application layer
+    ComputerController --> ComputerService
+}
+
+'=============================
+' Test Layer (Optional)
+'=============================
+package "PcRental.Tests" {
+    class UnitTests
+    UnitTests --> ComputerService
+    UnitTests --> ComputerController
+}
+
+'=============================
+' Relationships
+'=============================
+' Application depends on Domain
+IComputerRepository ..> Computer
+ComputerService ..> IComputerRepository
+
+' Clean Architecture dependency flow
+' API -> Application -> Domain
+' Infrastructure implements interfaces
+
+@enduml

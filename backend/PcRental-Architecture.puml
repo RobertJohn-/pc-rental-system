@@ -1,0 +1,39 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "PcRental.API" {
+  [Controllers]
+}
+
+package "PcRental.Application" {
+  [Services]
+  [Interfaces]
+}
+
+package "PcRental.Domain" {
+  [Entities]
+}
+
+package "PcRental.Infrastructure" {
+  [Repositories]
+  [AppDbContext]
+}
+
+package "PcRental.Tests" {
+  [Unit Tests]
+}
+
+' Dependency flow
+[Controllers] --> [Services]
+[Services] --> [Interfaces]
+[Repositories] ..|> [Interfaces]
+[Repositories] --> [AppDbContext]
+
+' Infrastructure depends inward
+[Repositories] --> [Entities]
+
+' Tests are external
+[Unit Tests] --> [Services]
+[Unit Tests] --> [Controllers]
+
+@enduml

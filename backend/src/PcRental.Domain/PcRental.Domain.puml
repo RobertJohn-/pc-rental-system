@@ -1,0 +1,29 @@
+@startuml
+
+' Domain entity
+class Computer {
+    - Id : Guid
+    - Name : string
+    - IsAvailable : bool
+    - CreatedAt : DateTime
+
+    + Computer(name : string)
+    + Rent() : void
+    + Return() : void
+    + Rename(newName : string) : void
+}
+
+' Application interface
+interface IComputerRepository {
+    + GetByIdAsync(id : Guid) : Task<Computer?>
+    + GetAllAsync() : Task<IEnumerable<Computer>>
+    + AddAsync(computer : Computer) : Task
+    + UpdateAsync(computer : Computer) : Task
+    + DeleteAsync(id : Guid) : Task
+    + GetAvailableAsync() : Task<IEnumerable<Computer>>
+}
+
+' Relationship
+IComputerRepository ..> Computer : uses
+
+@enduml
